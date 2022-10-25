@@ -77,3 +77,24 @@ body {
   margin-bottom: 40px;
   max-width: 500px;
 }
+
+.button {
+  border: 0;
+  box-sizing: border-box;
+  padding: 20px;
+  width: 335px;
+  height: 65px;
+  background: #030305;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  transition: background-color 0.5s;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #575757;
+}
