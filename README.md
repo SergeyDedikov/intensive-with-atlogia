@@ -1,1 +1,1 @@
-# intensive-with-atlogia
+# Интенсив с Романом Черновым ([Айтилогия](itlogia.ru))
