@@ -56,7 +56,7 @@ body {
 .main {
   min-height: 705px;
   box-sizing: border-box;
-  background: url("../images/background.png") center / cover no-repeat;
+  background: url("./images/background.png") center / cover no-repeat;
   padding: 105px 0 155px 0;
 }
 
