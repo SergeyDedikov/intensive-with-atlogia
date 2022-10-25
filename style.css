@@ -98,3 +98,26 @@ body {
   cursor: pointer;
   background-color: #575757;
 }
+
+.cars {
+  padding: 100px 0;
+}
+
+.sub-title {
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 70px;
+}
+
+.car-items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.car-item {
+  max-width: 385px;
+  text-align: center;
+  margin-top: 40px;
+}
