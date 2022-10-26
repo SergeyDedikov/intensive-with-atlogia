@@ -37,6 +37,13 @@ export class AppComponent {
     this.bgPos = { backgroundPositionX: '0' + (0.8 * window.scrollY) + 'px' };
   }
 
+  trans: any;
+
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(e: MouseEvent) {
+    this.trans = { transform: 'translate3d(' + ((e.clientX * 0.4) / 10) + 'px,' + ((e.clientY * 0.2) / 10) + 'px,0px)' };
+  }
+
   onSubmit() {
     if (this.priceForm.valid) {
       this.appService.sendQuery(this.priceForm.value)
