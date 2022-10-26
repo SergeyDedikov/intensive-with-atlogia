@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AppService } from './app.service';
 
@@ -17,6 +17,13 @@ export class AppComponent {
   carsData: any;
 
   constructor(private fb: FormBuilder, private appService: AppService) {
+  }
+
+  bgPos: any;
+
+  @HostListener('document:scroll', ['$event'])
+  onScroll() {
+    this.bgPos = { backgroundPositionX: '0' + (0.8 * window.scrollY) + 'px' };
   }
 
   onSubmit() {
