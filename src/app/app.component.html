@@ -32,7 +32,12 @@
           трассы!
         </div>
         <div class="main-action">
-          <button class="button" id="main-action" type="button">
+          <button
+            class="button"
+            id="main-action"
+            type="button"
+            (click)="goScroll(cars)"
+          >
             Посмотреть автомобили
           </button>
         </div>
@@ -40,7 +45,7 @@
     </div>
   </section>
 
-  <section class="cars" id="cars">
+  <section class="cars" id="cars" #cars>
     <div class="container">
       <h2 class="sub-title">Наш автопарк</h2>
       <div class="car-items">

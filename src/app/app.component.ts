@@ -19,6 +19,11 @@ export class AppComponent {
   constructor(private fb: FormBuilder, private appService: AppService) {
   }
 
+  goScroll(target: HTMLElement) {
+    target.scrollIntoView({ behavior: 'smooth' });
+    // TODO For every car set name to input car
+  }
+
   bgPos: any;
 
   @HostListener('document:scroll', ['$event'])
