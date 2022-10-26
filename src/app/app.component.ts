@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,31 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'intensive-with-atlogia';
+  priceForm = this.fb.group({
+    name: ['', Validators.required],
+    phone: ['', Validators.required],
+    car: ['', Validators.required],
+  });
+
+  carsData: any;
+
+  constructor(private fb: FormBuilder, private appService: AppService) {
+  }
+
+  onSubmit() {
+    if (this.priceForm.valid) {
+      this.appService.sendQuery(this.priceForm.value)
+        .subscribe(
+          {
+            next: (response: any) => {
+              alert(response.message);
+              this.priceForm.reset();
+            },
+            error: (response) => {
+              alert(response.error.message);
+            }
+          }
+        );
+    }
+  }
 }
