@@ -19,6 +19,10 @@ export class AppComponent {
   constructor(private fb: FormBuilder, private appService: AppService) {
   }
 
+  ngOnInit() {
+    this.appService.getData().subscribe(carsData => this.carsData = carsData);
+  }
+
   goScroll(target: HTMLElement) {
     target.scrollIntoView({ behavior: 'smooth' });
     // TODO For every car set name to input car
