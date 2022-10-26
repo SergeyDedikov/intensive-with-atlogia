@@ -211,26 +211,35 @@
         Заполните данные, и мы перезвоним вам для уточнения всех деталей
         бронирования
       </div>
-      <form class="price-form">
+      <form class="price-form" [formGroup]="priceForm">
         <input
+          formControlName="name"
           type="text"
           class="price-input"
           id="name"
           placeholder="Ваше имя"
         />
         <input
+          formControlName="phone"
           type="tel"
           class="price-input"
           id="phone"
           placeholder="Ваш телефон"
         />
         <input
+          formControlName="car"
           type="text"
           class="price-input"
           id="car"
           placeholder="Автомобиль, который вас интересует"
         />
-        <button class="button" id="price-action" type="button">
+        <button
+          class="button"
+          id="price-action"
+          type="button"
+          (click)="onSubmit()"
+          [disabled]="!priceForm.valid"
+        >
           Узнать цену
         </button>
       </form>
