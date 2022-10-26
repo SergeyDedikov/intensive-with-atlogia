@@ -23,9 +23,11 @@ export class AppComponent {
     this.appService.getData().subscribe(carsData => this.carsData = carsData);
   }
 
-  goScroll(target: HTMLElement) {
+  goScroll(target: HTMLElement, car?: any) {
     target.scrollIntoView({ behavior: 'smooth' });
-    // TODO For every car set name to input car
+    if (car) {
+      this.priceForm.patchValue({ car: car.name });
+    }
   }
 
   bgPos: any;
