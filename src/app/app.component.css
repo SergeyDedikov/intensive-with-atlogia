@@ -82,9 +82,15 @@
   transition: background-color 0.5s;
 }
 
-.button:hover {
+.button:hover:not(:disabled) {
   cursor: pointer;
   background-color: #575757;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  color: gray;
+  background-color: #343434;
 }
 
 .cars {
@@ -192,6 +198,14 @@
 
 .price-input::placeholder {
   color: #5d5d5f;
+}
+
+.price-input.ng-touched.ng-valid {
+  border: 1px solid #5D5D5F;
+}
+
+.price-input.ng-touched.ng-invalid {
+  border: 1px solid red;
 }
 
 .price .button {
